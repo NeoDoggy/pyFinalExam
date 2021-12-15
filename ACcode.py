@@ -1,6 +1,6 @@
 #bintree
 def mtree(n,np):
-    if(arr[np]==-1):
+    if(arr.get(np)==None):
         ans[n]=np
         arr[np]=n
         return
@@ -13,7 +13,7 @@ def mtree(n,np):
             mtree(n,np*2+1)
 #var
 s=list(map(int,input().split()))
-arr=[-1 for i in range(0,pow(2,len(s))+1)]
+arr={}
 ans={}
 #main
 for i in s:
