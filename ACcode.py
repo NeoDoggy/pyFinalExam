@@ -1,23 +1,15 @@
-#bintree
-def mtree(n,np):
-    if(arr.get(np)==None):
-        ans[n]=np
-        arr[np]=n
+def bintr(s,n):
+    if(d.get(n)==None):
+        d[n]=s
         return
     else:
-        if(n<=arr[np]):
-            ans[n]=np
-            mtree(n,np*2)
+        if(s>=d[n]):
+            bintr(s,n*2+1)
         else:
-            ans[n]=np
-            mtree(n,np*2+1)
-#var
-s=list(map(int,input().split()))
-arr={}
-ans={}
-#main
-for i in s:
-    mtree(i,1)
-#output
-for i in ans:
-    print(str(i)+":"+str(ans[i]))
+            bintr(s,n*2)
+d={}
+l=list(map(int,input().split()))
+for i in l:
+    bintr(i,1)
+for i in d:
+    print(d[i],':',i)
